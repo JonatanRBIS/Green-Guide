@@ -2,7 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 115%;
+  height: 116%;
   background: #ffffff !important;
 }
 .user_card {
@@ -52,7 +52,7 @@ html {
   outline: 0px !important;
 }
 .login_container {
-  padding: 0 2rem;
+  padding: 0 8rem;
 }
 .input-group-text {
   background: #699645 !important;
