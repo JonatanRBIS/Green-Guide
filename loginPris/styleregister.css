@@ -2,12 +2,12 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 116%;
   background: #ffffff !important;
 }
 .user_card {
-  height: 450px;
-  width: 350px;
+  height: 700px;
+  width: 500px;
   margin-top: auto;
   margin-bottom: auto;
   background: #dddddd;
@@ -52,7 +52,7 @@ html {
   outline: 0px !important;
 }
 .login_container {
-  padding: 0 2rem;
+  padding: 0 8rem;
 }
 .input-group-text {
   background: #699645 !important;
