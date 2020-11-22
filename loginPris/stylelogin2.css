@@ -29,6 +29,16 @@ html {
   border-radius: 50%;
   border: 2px solid white;
 }
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
 .form_container {
   margin-top: 100px;
 }
@@ -54,7 +64,4 @@ html {
 .input_pass:focus {
   box-shadow: none !important;
   outline: 0px !important;
-}
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #72aa51 !important;
 }
