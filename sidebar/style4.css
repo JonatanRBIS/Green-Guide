@@ -115,7 +115,7 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #5eec51d2;
 }
 
 #sidebar .sidebar-header strong {
@@ -125,7 +125,7 @@ span {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #ffffff;
 }
 
 #sidebar ul li a {
