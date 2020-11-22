@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>GreenGuide | Login </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylelogin2.css">
+</head>
+<body>
+	<div class="container-fluid h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+						<img src="../..\images\logoround.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form id="form" method="post" action="session.php">
+                        <label for="">Correo Electrónico</label>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            
+							<input type="email" name="" class="form-control input_user" value="" placeholder="user@example.com">
+                        </div>
+                        <label for="">Contraseña</label>
+						<div class="input-group mb-2">
+                            
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            
+							<input type="password" name="" class="form-control input_pass" value="" placeholder="contraseña">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	            <button type="button" name="button" class="btn login_btn">Login</button>
+				            </div>
+					</form>
+				</div>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
