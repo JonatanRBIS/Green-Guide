@@ -1,11 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "id15459358_admon";
-$password = '{zplc@-zxD$lI0@2';
-$dbname = "id15459358_green_guide";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$servername = 'localhost';
+$username = 'root';
+$password = 'helloworld';
+$dbname ='green_guide';
+// Create connection
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+$conn -> set_charset("utf8");
+$conn -> autocommit(FALSE);
 
 
 $conn -> set_charset("utf8");
