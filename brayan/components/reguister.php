@@ -45,7 +45,7 @@ include_once('../components/footer.php');
                 <div class="form-group">
                   <label for="">Dirección</label>
                   <input type="text"
-                    class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Contraseña</label>
