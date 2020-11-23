@@ -1,6 +1,6 @@
 <?php
     
-    function head($links){
+    function head($links,$p_name){
     
         
         echo '
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>'.$p_name.'</title>
     <style type="text/css">
     img {
         width: 100%; height:100%

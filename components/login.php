@@ -1,51 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        .jumbotron{
-            margin-top:15%; 
-            text-align:center;
-        }
-        .img-rounded-circle{
-            border-radius:49%;
-        }
-        
-    </style>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container" >
-        <div class="jumbotron"  >
-            <h1 class="display-3">Green Guide</h1>
-            <br>
-            <img src="../images/GreenguideLogoCOOL.png" alt="Green_guide_logo" style="border-radius:50%"></img>
-            <br> <br>
-            <hr class="my-2">
-            <p>More info</p>
-            <form action="validate_user.php" method="post">
-                <div class="form-group">
-                  <label for="">Correo</label>
-                  <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="usuario@ejemplo.com">
-                  <br>
-                  <div class="form-group">
-                    <label for="">Contraseña<a href=""></a></label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="****************">
-                  </div>
-                </div>
-                <a href="#">texto de ejemplo</a>
-            </form>
-        </div>
-    </div>  
+<?php
+
+session_start();
+if (isset($_SESSION["user_id"])){
+
+	header_remove();
+	header("Location: http://localhost/Green-Guide/brayan/views/home.php?a=1");
+}
+?>
+<!DOCTYPE html>
+<html>
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+<head>
+    <title>GreenGuide | Login </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylelogin2.css">
+</head>
+<body>
+<?php
+if (isset($_GET)){
+  if($_GET['a'] == "1"){
+    echo'
+    <div class="alert alert-success" role="alert">
+		Usuario reguistrado con éxito
+    </div>';
+  }
+  else if($_GET['a'] == "2"){
+    echo'
+    <div class="alert alert-danger" role="alert">
+		Datos erroneos
+    </div>';
+  }
+}
+?>
+
+	<div class="container-fluid h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+						<img src="../..\images\logoround.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form id="form" method="post" action="../models/session.php">
+                        <label for="">Correo Electrónico</label>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+							<input type="email" name="email" id="email" class="form-control input_user" value="" placeholder="user@example.com" required>
+                        </div>
+                        <label for="">Contraseña</label>
+						<div class="input-group mb-2">
+                            
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            
+							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="contraseña">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	            <button type="submit" name="button" class="btn login_btn">Login</button>
+				            </div>
+					</form>
+				</div>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						¿Aún no tiene una cuenta? <a href="../components/register.php" class="ml-2">Reguistrate</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
+<?php
+
+?>

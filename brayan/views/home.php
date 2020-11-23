@@ -1,10 +1,11 @@
 <?php
+session_start();
 require("../components/header.php");
 require("../components/footer.php");
 require("../components/home.php");
 
-session_start();
-head('');
+
+head("","about us");
 if ($_GET['a']==1){
     echo'
     <div class="alert alert-danger" role="alert">

@@ -1,7 +1,10 @@
 <?php
     
-    function head(){
+    function head($links,$p_name){
+    
+        
         echo '
+        
         <!DOCTYPE html>
         <html lang="en">
 
@@ -10,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>'.$p_name.'</title>
     <style type="text/css">
     img {
         width: 100%; height:100%
@@ -27,15 +30,16 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../sidebar/style4.css">
-
+    <link rel="stylesheet" href="../css/style4.css">
+    '.$links.'
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-</head>
-
-
+</head>';
+    }
+    function sidebar_header() {
+echo '
 <body ">
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -51,17 +55,27 @@
                         <i class="fas fa-home"></i>
                         Jardines
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu" >
+                    <ul class="collapse list-unstyled" id="homeSubmenu">';
+                    if(isset($_SESSION["user_id"])){
+                        require_once("../models/connection.php");
+                        $sql = "SELECT garden_name FROM gardens WHERE user_id LIKE ".$_SESSION["user_id"].";";
+                        $result = $conn->query($sql);
+                    
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                echo '
+                                <li>
+                                    <a href="#">'.$row["garden_name"].'</a>
+                                </li>';
+                            }
+                        }
+                        echo '
                         <li>
-                            <a href="#" >Jardin 1</a>
-                        </li>
-                        <li>
-                            <a href="#" >Jardin 2</a>
-                        </li>
-                        <li>
-                            <a href="#" >Jardin 3</a>
-                        </li>
-                    </ul>
+                            <a href="#">Nuevo jardín <i class="fas fa-plus"></i></a>
+                        </li>';
+                    }
+                echo    '</ul>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >
@@ -130,16 +144,30 @@
                                 <i class="fas fa-align-justify"></i>
                             </button>
 
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            ';
+                            if(isset($_SESSION["user_id"])){
+                            echo'<div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="nav navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="#">iniciar sesión</a>
+                                        <a class="nav-link" href="../models/close_session.php">cerrar sesión</a>
+                                    </li>
+                                </ul>
+                            </div>';
+                            }
+                            else{
+                            echo'<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="http://localhost/Green-Guide/brayan/components/login.php">Iniciar Sesion</a>
                                     </li>
                                     <li class=" -item">
-                                        <a class="nav-link" href="#">Crear cuenta</a>
+                                        <a class="nav-link" href="http://localhost/Green-Guide/brayan/components/register.php">Crear cuenta</a>
                                     </li>
                                 </ul>
                             </div>
+                            ';
+                        }
+                        echo '
                         </div>
                     </nav>
                 </div>

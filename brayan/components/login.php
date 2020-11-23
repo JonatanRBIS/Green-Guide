@@ -1,7 +1,15 @@
+<?php
 
+session_start();
+if (isset($_SESSION["user_id"])){
+
+	header_remove();
+	header("Location: http://localhost/Green-Guide/brayan/views/home.php?a=1");
+}
+?>
 <!DOCTYPE html>
 <html>
-
+    
 <head>
     <title>GreenGuide | Login </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +19,6 @@
 </head>
 <body>
 <?php
-
 if (isset($_GET)){
   if($_GET['a'] == "1"){
     echo'
@@ -26,11 +33,6 @@ if (isset($_GET)){
     </div>';
   }
 }
-if (isset($_SESSION["user_id"])):
-
-	header("Location: http://localhost/Green-Guide/brayan/views/home?a=1");
-
-else:
 ?>
 
 	<div class="container-fluid h-100">
@@ -80,5 +82,5 @@ else:
 </body>
 </html>
 <?php
-endif;
+
 ?>
