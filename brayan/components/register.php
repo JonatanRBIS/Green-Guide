@@ -1,6 +1,3 @@
-<?php
-include_once('../components/footer.php');
-?>
 <!doctype html>
 
 <html lang="en">
@@ -14,6 +11,18 @@ include_once('../components/footer.php');
 </head>
 
 <body>
+<?php
+if (isset($_GET)){
+  if($_GET['a'] == "1"){
+    echo'
+    <div class="alert alert-danger" role="alert">
+      Error al registrar usuario
+    </div>';
+  }
+}
+
+?>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6" style="  display: flex;
@@ -32,7 +41,7 @@ include_once('../components/footer.php');
               </div>
             </div>
             <div class="d-flex justify-content-center form_container">
-              <form id="form" method="post" action="register_user.php">
+              <form id="form" method="post" action="../models/register_user.php">
                 <div class="form-group mb-3">
                   <label for="">Nombre de usuario</label>
                   <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="" required>
@@ -43,7 +52,7 @@ include_once('../components/footer.php');
                 </div>
                 <div class="form-group">
                   <label for="">Dirección</label>
-                  <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="">
+                  <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="">Contraseña</label>
@@ -54,10 +63,11 @@ include_once('../components/footer.php');
                   <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="" required>
                 </div>
                 <div class="d-flex justify-content-center mt-3 login_container">
-                  <div class="form-group">
-                    <label for="">Fecha de Nacimiento</label><br>
-                    <input type="date" id="date" name="trip-start" value="" min="1950-01-01" max="2010-10-31">
-                  </div>
+                <div class="form-group">
+                  <input type="date" id="date" name="date"
+                    value=""
+                    min="1950-01-01" max="2010-10-31">
+                </div>
                 </div>
                 <div class="d-flex justify-content-center mt-3 login_container">
                   <button type="submit" class="btn btn-primary">Registrarse</button>
@@ -69,9 +79,6 @@ include_once('../components/footer.php');
         </div>
       </div>  
     </div>
-    <?php
-    footer();
-    ?>
   </div>
   <!-- Minified Bootstrap CSS -->
   <!-- Minified Bootstrap JS -->
