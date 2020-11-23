@@ -68,3 +68,6 @@ html {
 footer{
     text-align: center;
 }
+.container{
+  background-image: url(../images/home.jpg);
+}

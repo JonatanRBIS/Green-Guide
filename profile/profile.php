@@ -39,14 +39,6 @@
                                     <label for="">Dirección</label>
                                     <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="">
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Contraseña</label>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Confirmar contraseña</label>
-                                    <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="" required>
-                                </div>
                                 <div class="d-flex justify-content-center mt-3 login_container">
                                     <div class="form-group">
                                         <label for="">Fecha de Nacimiento</label><br>
