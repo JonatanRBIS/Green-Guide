@@ -4,7 +4,7 @@ require("../components/footer.php");
 require("../components/home.php");
 
 session_start();
-head();
+head('');
 if ($_GET['a']==1){
     echo'
     <div class="alert alert-danger" role="alert">
