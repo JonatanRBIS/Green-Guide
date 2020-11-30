@@ -31,5 +31,55 @@
         </div>
         ";
     }
-    
+    function home1(){
+        echo "  <div class='container-fluid'>
+        <div class='row'>
+            
+            <div class='col-md-6'>
+                <div class='d-flex justify-content-center h-100' style='margin-top:10%'>
+                    <div class='user_card'>
+                        <div class='d-flex justify-content-center'>
+                            <div class='brand_logo_container'>
+                                <img src='..\images\logoround.png' class='brand_logo' alt='Logo'>
+                            </div>
+                        </div>
+                        <div class='d-flex justify-content-center form_container'>
+                            <form id='form'>
+                                <div class='form-group mb-3'>
+                                    <label for=''>Nombre de usuario</label>
+                                    <input type='text' class='form-control' name='name' id='name' aria-describedby='helpId' placeholder='' required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for=''>Correo electronico</label>
+                                    <input type='email' class='form-control' name='email' id='email' aria-describedby='emailHelpId' placeholder='' required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for=''>Dirección</label>
+                                    <input type='text' class='form-control' name='direccion' id='direccion' aria-describedby='helpId' placeholder=''>
+                                </div>
+                                <div class='form-group'>
+                                    <label for=''>Jardines</label>
+                                    <input type='text' class='form-control' name='direccion' id='direccion' aria-describedby='helpId' placeholder=''>
+                                </div>
+                                <div class='form-group'>
+                                    <label for=''>No. de plantas</label>
+                                    <input type='text' class='form-control' name='direccion' id='direccion' aria-describedby='helpId' placeholder=''>
+                                </div>
+                                
+                            </form>
+                            <script src='../js/validate_data.js'></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class='col-md-6'>
+                    <div class='container' style='text-align:center'>
+                    <h1 style='font-size: 4em; '>Hola</h1>
+                    <img src='../images/ficusimagen.jpg' alt='Plantita'>
+                </div>
+            </div>
+        </div>
+    </div>
+        ";   
+    } 
 ?>

@@ -10,14 +10,7 @@
 <body>
 <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" style="display: flex;
-                justify-content: center;
-                align-items: center;">
-                <div class="container" style=" text-align:center">
-                    <h1 style="font-size: 4em; ">Green Guide</h1>
-                </div>
-            </div>
-            <div class="col-md-6">
+        <div class="col-md-6">
                 <div class="d-flex justify-content-center h-100" style="margin-top:10%">
                     <div class="user_card">
                         <div class="d-flex justify-content-center">
@@ -55,12 +48,20 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="col-md-6" style="display: flex;
+                justify-content: center;
+                align-items: center;">
+                <div class="container" style=" text-align:center">
+                    <h1 style="font-size: 4em; ">Green Guide</h1>
+                    <img src='../images/ficusimagen.jpg' alt='Plantita'>
+                </div>
+            </div> 
         </div>
     </div>
     <br>
     <br>
     <br>
+    
     <footer>Derechos Reservados 2020</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
